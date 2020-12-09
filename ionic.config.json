@@ -1,0 +1,7 @@
+{
+  "name": "ionic-vue-debug-routing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
