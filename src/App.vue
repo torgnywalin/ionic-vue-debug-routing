@@ -13,6 +13,13 @@
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
+            
+            <ion-menu-toggle auto-hide="false">
+              <ion-item  router-direction="root" :router-link="'/test'" lines="none" detail="false" class="hydrated">
+                <ion-icon slot="start" name="home"></ion-icon>
+                <ion-label>Test</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
           </ion-list>
   
           <ion-list id="labels-list">
