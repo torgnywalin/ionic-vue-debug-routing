@@ -15,7 +15,7 @@
             </ion-menu-toggle>
             
             <ion-menu-toggle auto-hide="false">
-              <ion-item  router-direction="root" :router-link="'/test'" lines="none" detail="false" class="hydrated">
+              <ion-item @click="selectedIndex = 200" router-direction="root" :router-link="'/test'" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === 200}">
                 <ion-icon slot="start" name="home"></ion-icon>
                 <ion-label>Test</ion-label>
               </ion-item>

@@ -5,33 +5,35 @@
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>Test</ion-title>
+        <ion-title>Home</ion-title>
       </ion-toolbar>
     </ion-header>
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Test</ion-title>
+          <ion-title size="large">Home</ion-title>
         </ion-toolbar>
       </ion-header>
     
       <div id="container">
-        <strong class="capitalize">Test</strong>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <strong class="capitalize">Welcome Home</strong>
+        <p>This is the home page</p>
+        <ion-button @click="navigate('/folder/start')">Start dynamic</ion-button>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-/* import { useRoute } from 'vue-router';
-import { ref, computed, watch } from 'vue'; */
+import { IonButton, IonBackButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { useRouter } from 'vue-router';
+/*import { ref, computed, watch } from 'vue'; */
 
 export default {
   name: 'Folder',
   components: {
+    IonButton,
     IonButtons,
     IonBackButton,
     IonContent,
@@ -41,7 +43,14 @@ export default {
     IonToolbar,
   },
   setup() {
-    return {}
+    const router = useRouter();
+    const navigate = (url: string) => {
+      router.push(url);
+    }
+
+    return {
+      navigate,
+    }
   }
 }
 </script>
